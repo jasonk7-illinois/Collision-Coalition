@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+.ipynb_checkpoints/
+*.duckdb
+*.db
+.snakemake/
+~$*
+
+# rebuilt by the workflow, too big for github
+data/clean/crashes_clean.csv
+
+# printouts from the workflow
+logs/

@@ -64,30 +64,30 @@ All three sources come from portals on the instructor's dataset list (City of Ch
 
 ## Timeline
 
-Milestone 2 (this plan) is due **Oct 22**. Canvas has not yet posted the Milestone 3 and 4 due dates, so later dates below are our own targets and will be updated when the official dates appear.
+*Updated Nov 19 for Milestone 3. The original targets for Tasks 1–8 (Oct 26 – Nov 17) were missed; the Target column below shows the revised dates. See [StatusReport.md](StatusReport.md) for the status of each task.* Milestone 3 (status report) is due **Nov 19**. Canvas has not yet posted the Milestone 4 due date, so the final dates are our own targets.
 
 |  | Task | What it involves | Course module | Owner | Target |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Repository setup | Folder layout (`data/raw`, `data/clean`, `scripts`, `results`, `docs`), `.gitignore`, `requirements.txt`, a short file-naming convention in the README | 2 | Tim | Oct 26 |
-| 2 | Acquisition scripts | One script per dataset using `requests`; save CSVs to `data/raw`; compute and record SHA-256 for each file; record the download date | 4 | Tim | Oct 30 |
-| 3 | Legal / ethical check | Write up the terms of use for each source and confirm no personal data is used | 3 | Saif | Oct 30 |
-| 4 | Storage model | `schema.sql` with three tables and primary keys; DuckDB load script using `COPY`; ER diagram (draw.io) | 5–6 | Jason | Nov 3 |
-| 5 | Pre-integration quality assessment | For each dataset, measure the four dimensions from Week 9: accuracy (syntactic: do dates, numbers, and category labels match the expected format/range; semantic: spot-check values against an outside source), completeness (column completeness = non-null ÷ total for each field; temporal completeness = are any days missing), timeliness (when was each source last updated, and how often does it change), consistency (rule checks such as `INJURIES_FATAL ≤ INJURIES_TOTAL`, `TMIN ≤` `TMAX`, `bus + rail = total_rides`, no duplicate crash IDs); write results to `docs/` | 9–10 | Joseph | Nov 7 |
-| 6 | Cleaning scripts | Fix the specific issues found in Task 5 (parse dates to one format, standardize category labels, handle missing days, remove duplicates); document each fix | 11–12 | Joseph | Nov 11 |
-| 7 | Integration script | Aggregate crashes to one row per day; join to weather and ridership on date; save integrated CSV and load to DuckDB | 7–8 | Jason | Nov 14 |
-| 8 | Post-integration quality assessment | Repeat the four dimensions on the integrated table: completeness = share of days with a match in all three sources and a list of unmatched dates; consistency = one row per date, totals still add up; timeliness = all sources cover the same date range; accuracy = compare the officer-reported `WEATHER_CONDITION` to NOAA's observed precipitation for the same day (semantic accuracy checked against an independent source, as in Week 9) | 10 | Joseph | Nov 17 |
-| 9 | **Milestone 3: Status report** | `StatusReport.md`, updated plan, each member's contribution note, `status-report` release | — | All | TBD Canvas |
-| 10 | Analysis & visualization | Compare daily crash counts and injury rates across weather and ridership conditions; produce at least one chart; save results to `results/` | — | Saif | Nov 25 |
-| 11 | Workflow automation | Run-all script or Snakefile that runs Tasks 2, 4–8, 10 in order; test on a fresh clone | 13 | Tim | Dec 2 |
-| 12 | Metadata & documentation | Data dictionary (text file), machine-readable metadata file (format per Module 15), LICENSE files for code and data, `pip freeze` output | 14–15 | Saif, Tim | Dec 5 |
+| 1 | Repository setup | Folder layout (`data/raw`, `data/clean`, `scripts`, `results`, `docs`), `.gitignore`, `requirements.txt`, a short file-naming convention in the README | 2 | Tim | Done (Nov 19) |
+| 2 | Acquisition scripts | One script per dataset using `requests`; save CSVs to `data/raw`; compute and record SHA-256 for each file; record the download date | 4 | Tim | Done (Nov 19) |
+| 3 | Legal / ethical check | Write up the terms of use for each source and confirm no personal data is used | 3 | Saif | Nov 23 |
+| 4 | Storage model | `schema.sql` with three tables and primary keys; DuckDB load script using `COPY`; ER diagram (draw.io) | 5–6 | Jason | Nov 24 |
+| 5 | Pre-integration quality assessment | For each dataset, measure the four dimensions from Week 9: accuracy (syntactic: do dates, numbers, and category labels match the expected format/range; semantic: spot-check values against an outside source), completeness (column completeness = non-null ÷ total for each field; temporal completeness = are any days missing), timeliness (when was each source last updated, and how often does it change), consistency (rule checks such as `INJURIES_FATAL ≤ INJURIES_TOTAL`, `TMIN ≤` `TMAX`, `bus + rail = total_rides`, no duplicate crash IDs); write results to `docs/` | 9–10 | Joseph | Nov 27 |
+| 6 | Cleaning scripts | Fix the specific issues found in Task 5 (parse dates to one format, standardize category labels, handle missing days, remove duplicates); document each fix | 11–12 | Joseph | Dec 1  |
+| 7 | Integration script | Aggregate crashes to one row per day; join to weather and ridership on date; save integrated CSV and load to DuckDB | 7–8 | Jason | Dec 3  |
+| 8 | Post-integration quality assessment | Repeat the four dimensions on the integrated table: completeness = share of days with a match in all three sources and a list of unmatched dates; consistency = one row per date, totals still add up; timeliness = all sources cover the same date range; accuracy = compare the officer-reported `WEATHER_CONDITION` to NOAA's observed precipitation for the same day (semantic accuracy checked against an independent source, as in Week 9) | 10 | Joseph | Dec 5  |
+| 9 | **Milestone 3: Status report** | `StatusReport.md`, updated plan, each member's contribution note, `status-report` release | — | All | **Nov 19** |
+| 10 | Analysis & visualization | Compare daily crash counts and injury rates across weather and ridership conditions; produce at least one chart; save results to `results/` | — | Saif | Dec 7  |
+| 11 | Workflow automation | Run-all script or Snakefile that runs Tasks 2, 4–8, 10 in order; test on a fresh clone | 13 | Tim | Dec 8 |
+| 12 | Metadata & documentation | Data dictionary (text file), machine-readable metadata file (format per Module 15), LICENSE files for code and data, `pip freeze` output | 14–15 | Saif, Tim | Dec 8 |
 | 13 | Final README | All required report sections with links to the repository files; "Reproducing" steps; references | 14 | All | Dec 9 |
-| 14 | **Milestone 4: Final release** | Fresh-clone test, `final-project` release, submit on Canvas | — | All | TBD Canvas |
+| 14 | **Milestone 4: Final release** | Fresh-clone test, `final-project` release, submit on Canvas | — | All | TBD (Canvas) |
 
 **Data lifecycle:** We will relate our steps to the data science lifecycle introduced in Module 1 (plan → acquire → process/clean → integrate → analyze → preserve/share), and point out in the final report where each script fits.
 
 ## Constraints
 
-- **File size.** The full crash CSV is well over GitHub's 50 MB limit. We will download only the years and columns we need; if the file is still too large we will store it on Illinois Box with a download step in the workflow and a shareable link in the README.
+- **File size.** The 2019–2024 crash extract is about 146 MB in total, well over GitHub's 50 MB per-file limit. *Update (Nov 19):* instead of using Box, the acquisition script downloads one CSV per year (21–26 MB each), so all input data is committed to the repository.
 - **The crash data changes daily.** Re-downloading later will give different counts. We will record the download date and SHA-256 of the file we used, and the workflow will use the saved copy.
 - **One weather station.** O'Hare is at the far northwest edge of the city, so weather elsewhere in Chicago may differ. We may add the Midway station as a second check.
 - **Reported crashes only.** Minor crashes often go unreported, so our counts describe reported crashes.
@@ -96,8 +96,15 @@ Milestone 2 (this plan) is due **Oct 22**. Canvas has not yet posted the Milesto
 
 ## Gaps
 
-- **Milestone 3 and 4 due dates** are not yet on Canvas; the timeline will be updated when they appear.
+- **Milestone 4 due date** is not yet on Canvas; the timeline will be updated when it appears.
 - **Modules 13–15** (workflow automation, reproducibility, metadata) have not been taught yet. We know a Snakefile or run-all script and a machine-readable metadata file are required but will finalize tool choices after those modules.
 - **OpenRefine vs. scripts for cleaning.** OpenRefine is introduced in next week's lab; we will decide afterward whether to use it (with its exported operation history) or pandas scripts for cleaning.
 - **Instructor feedback** on whether the officer-reported vs. NOAA weather agreement check is a good accuracy test, and whether our three sources are considered sufficiently distinct.
 - **Possible extension.** If time allows, we could add neighborhood-level data (e.g., Census ACS) as a fourth source, but that would require mapping crash coordinates to geographic areas, which we have not covered in class and would only attempt after the core pipeline works.
+
+## Changes Since Milestone 2
+
+- **Feedback for research question 3.** The grader's feedback on question 3 (comparing the weather reported by the officer with the data from NOAA) was that it is more a data-quality check than a research question. We agree, and are keeping it as the accuracy component of the post-integration data quality assessment (Task 8), with questions 1 and 2 as the main analysis questions.
+- **Timeline.** Tasks 1–8 slipped; all target dates were revised (see the Timeline table).
+- **Crash data storage.** One CSV per year in `data/raw/` instead of one large file on Box (see Constraints).
+- **Checksums.** None of the three sources publishes a hash, so the SHA-256 of each file is recorded in `data/raw/checksums.csv` at first download and re-verified on every run.
