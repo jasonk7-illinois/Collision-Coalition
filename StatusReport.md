@@ -38,11 +38,9 @@ The terms of use for each source were identified in the project plan (City of Ch
 
 `schema.sql`, the DuckDB load script, and the ER diagram are not in the repository yet. This task was waiting on the raw files, which are now available.
 
-### Tasks 5, 6, and 8: Quality assessment and cleaning (Joseph) — Not started
+### Tasks 5, 6, and 8: Quality assessment and cleaning (Joseph) — In progress
 
-> TODO (Joseph): confirm or correct this status and add a link if anything exists.
-
-The pre-integration assessment, the cleaning scripts, and the post-integration assessment are not in the repository yet. A first look at the raw crash files already shows something for the assessment to measure: `weather_condition`, `roadway_surface_cond`, and `lighting_condition` contain the value `UNKNOWN`, which will count against completeness even though the cells are not empty.
+The five scripts have been committed but not yet run, with a link to each. The results and cleaned files follow the timeline dates. A first look at the raw crash files already shows something for the assessment to measure: `weather_condition`, `roadway_surface_cond`, and `lighting_condition` contain the value `UNKNOWN`, which will count against completeness even though the cells are not empty.
 
 ### Task 7: Integration script (Jason) — Not started
 
@@ -60,10 +58,10 @@ These were always scheduled after this milestone. The acquisition scripts were w
 | 2 | Acquisition scripts | Tim | Oct 30 | Done | Nov 19 |
 | 3 | Legal / ethical check | Saif | Oct 30 | Not started | Nov 23 |
 | 4 | Storage model (`schema.sql`, DuckDB load, ER diagram) | Jason | Nov 3 | Not started | Nov 24 |
-| 5 | Pre-integration quality assessment | Joseph | Nov 7 | Not started | Nov 27 |
-| 6 | Cleaning scripts | Joseph | Nov 11 | Not started | Dec 1 |
+| 5 | Pre-integration quality assessment | Joseph | Nov 7 | In progress | Nov 27 |
+| 6 | Cleaning scripts | Joseph | Nov 11 | In progress | Dec 1 |
 | 7 | Integration script | Jason | Nov 14 | Not started | Dec 3 |
-| 8 | Post-integration quality assessment | Joseph | Nov 17 | Not started | Dec 5 |
+| 8 | Post-integration quality assessment | Joseph | Nov 17 | In progress | Dec 5 |
 | 9 | Milestone 3: status report | All | TBD | Done | Nov 19 |
 | 10 | Analysis and visualization | Saif | Nov 25 | Not started | Dec 7 |
 | 11 | Workflow automation | Tim | Dec 2 | Not started | Dec 8 |
