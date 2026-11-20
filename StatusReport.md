@@ -26,11 +26,9 @@ There is one acquisition script per source, all using Python `requests`:
 
 All three scripts share a common utility script ([scripts/common.py](scripts/common.py)), which is responsible for performing the download and ensuring its integrity. As none of our sources provide a hash, the script computes the SHA-256 for each downloaded file and stores it (along with the file size, download timestamp, and the exact request URL used) in [data/raw/checksums.csv](data/raw/checksums.csv). On any subsequent run, it does not re-download the file. Instead, it computes the hash of the local file and aborts with an error if it does not match what was originally recorded.
 
-### Task 3: Legal / ethical check (Saif) — Not started
+### Task 3: Legal / ethical check (Saif) — Done
 
-> TODO (Saif): confirm or correct this status and add a link if anything exists.
-
-The terms of use for each source were identified in the project plan (City of Chicago open data terms for crashes and ridership; public domain for NOAA). The written check and the license files are still to do.
+The terms of use for each source were identified in the project plan (City of Chicago open data terms for crashes and ridership; public domain for NOAA). The written check is in [docs/legal_ethical.md](docs/legal_ethical.md); the terms page for each source was checked on Nov 19. The code license is in [LICENSE](LICENSE).
 
 ### Task 4: Storage model (Jason) — In Progress
 
@@ -44,9 +42,9 @@ The five scripts have been committed but not yet run, with a link to each. The r
 
 [Integrate.sql](scripts/integrate.sql) and [integrate.py](scripts/integrate.py) have both been committed. They have not been run yet since they need the cleaned data from task 6.
 
-### Tasks 10–14: Analysis, workflow, metadata, README, final release — Not started
+### Tasks 10–14: Analysis, workflow, metadata, README, final release — Partly started
 
-These were always scheduled after this milestone. The acquisition scripts were written so that a run-all script or Snakefile can call them as the first stage of the workflow without changes.
+Saif has already committed the analysis script ([scripts/analyze.py](scripts/analyze.py)), the [data dictionary](docs/data_dictionary.md) and [metadata.json](metadata.json), so Tasks 10 and 12 are in progress. They will be finished once the integrated table exists. These were always scheduled after this milestone. The acquisition scripts were written so that a run-all script or Snakefile can call them as the first stage of the workflow without changes.
 
 ## Updated Timeline
 
@@ -54,16 +52,16 @@ These were always scheduled after this milestone. The acquisition scripts were w
 |---|---|---|---|---|---|
 | 1 | Repository setup | Tim | Oct 26 | Done | Nov 19 |
 | 2 | Acquisition scripts | Tim | Oct 30 | Done | Nov 19 |
-| 3 | Legal / ethical check | Saif | Oct 30 | Not started | Nov 23 |
+| 3 | Legal / ethical check | Saif | Oct 30 | Done | Nov 23 |
 | 4 | Storage model (`schema.sql`, DuckDB load, ER diagram) | Jason | Nov 3 | In Progress | Nov 24 |
 | 5 | Pre-integration quality assessment | Joseph | Nov 7 | In progress | Nov 27 |
 | 6 | Cleaning scripts | Joseph | Nov 11 | In progress | Dec 1 |
 | 7 | Integration script | Jason | Nov 14 | In Progress | Dec 3 |
 | 8 | Post-integration quality assessment | Joseph | Nov 17 | In progress | Dec 5 |
 | 9 | Milestone 3: status report | All | TBD | Done | Nov 19 |
-| 10 | Analysis and visualization | Saif | Nov 25 | Not started | Dec 7 |
+| 10 | Analysis and visualization | Saif | Nov 25 | In progress | Dec 7 |
 | 11 | Workflow automation | Tim | Dec 2 | Not started | Dec 8 |
-| 12 | Metadata and documentation | Saif, Tim | Dec 5 | Not started | Dec 8 |
+| 12 | Metadata and documentation | Saif, Tim | Dec 5 | In progress | Dec 8 |
 | 13 | Final README | All | Dec 9 | Not started | Dec 9 |
 | 14 | Milestone 4: final release | All | TBD | Not started | TBD (not yet on Canvas) |
 
@@ -97,6 +95,6 @@ Two items from the Gaps section of the plan are still open: whether cleaning wil
 Each member wrote and committed their own summary:
 
 - [Tim Cho](contributions/tim-cho.md)
-- [Jason Kim](contributions/jason-kim.md)
+- [Jason Kim](contributions/Jason-Kim.md)
 - [Joseph Choi](contributions/joseph-choi.md)
 - [Saif Farooq](contributions/saif-farooq.md)
