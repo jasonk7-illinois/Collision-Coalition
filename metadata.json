@@ -1,0 +1,52 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Dataset",
+  "name": "Daily Traffic Crashes, Weather, and Transit Ridership in Chicago, 2019-2024",
+  "description": "The dataset has daily data for Chicago from 2019 to 2024 with one row per day. Every row has the number of traffic crashes reported and how serious they were. It also has the number of people that rode CTA buses and trains that day, and the weather at O'hare. It was made for our IS 477 course group project at the University of Illinois Urbana-Champaign.",
+  "url": "https://github.com/jasonk7-illinois/Collision-Coalition",
+  "keywords": ["car crashes", "traffic safety", "car accidents", "weather", "Chicago", "public transport", "CTA", "snow", "rain", "data curation"],
+  "creator": [
+    {"@type": "Person", "name": "Jason Kim", "affiliation": "University of Illinois Urbana-Champaign"},
+    {"@type": "Person", "name": "Joseph Choi", "affiliation": "University of Illinois Urbana-Champaign"},
+    {"@type": "Person", "name": "Saif Farooq", "affiliation": "University of Illinois Urbana-Champaign"},
+    {"@type": "Person", "name": "Tim Cho", "affiliation": "University of Illinois Urbana-Champaign"}
+  ],
+  "dateCreated": "2026-12-09",
+  "temporalCoverage": "2019-01-01/2024-12-31",
+  "spatialCoverage": {"@type": "Place", "name": "Chicago, Illinois, United States"},
+  "license": "https://www.chicago.gov/city/en/narr/foia/data_disclaimer.html",
+  "isBasedOn": [
+    {
+      "@type": "Dataset",
+      "name": "Traffic Crashes - Crashes",
+      "publisher": {"@type": "Organization", "name": "City of Chicago"},
+      "url": "https://data.cityofchicago.org/Transportation/Traffic-Crashes-Crashes/85ca-t3if"
+    },
+    {
+      "@type": "Dataset",
+      "name": "Daily Summaries (GHCN-Daily), station USW00094846, Chicago O'Hare International Airport",
+      "publisher": {"@type": "Organization", "name": "NOAA National Centers for Environmental Information"},
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1"
+    },
+    {
+      "@type": "Dataset",
+      "name": "CTA - Ridership - Daily Boarding Totals",
+      "publisher": {"@type": "Organization", "name": "Chicago Transit Authority"},
+      "url": "https://data.cityofchicago.org/Transportation/CTA-Ridership-Daily-Boarding-Totals/6iiy-9s97"
+    }
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "daily_integrated.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://github.com/jasonk7-illinois/Collision-Coalition/blob/main/data/clean/daily_integrated.csv"
+    }
+  ],
+  "variableMeasured": [
+    "date", "day_type", "crash_count", "crashes_with_injury_info", "injury_crash_count",
+    "injuries_total", "injuries_fatal", "crashes_with_weather_info", "crashes_reported_precip",
+    "prcp_in", "snow_in", "tmax_f", "tmin_f", "awnd_mph",
+    "bus_rides", "rail_rides", "total_rides", "has_crashes", "has_weather", "has_ridership"
+  ]
+}
