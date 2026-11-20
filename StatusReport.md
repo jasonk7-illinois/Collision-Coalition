@@ -32,19 +32,17 @@ All three scripts share a common utility script ([scripts/common.py](scripts/com
 
 The terms of use for each source were identified in the project plan (City of Chicago open data terms for crashes and ridership; public domain for NOAA). The written check and the license files are still to do.
 
-### Task 4: Storage model (Jason) — Not started
+### Task 4: Storage model (Jason) — In Progress
 
-> TODO (Jason): confirm or correct this status and add a link if anything exists.
-
-`schema.sql`, the DuckDB load script, and the ER diagram are not in the repository yet. This task was waiting on the raw files, which are now available.
+[schema.sql](scripts/schema.sql) and [load_db.py](scripts/load_db.py) have both been committed. The first load and ER diagram still need to be done, and the load can not be done without the cleaned files from task 6.
 
 ### Tasks 5, 6, and 8: Quality assessment and cleaning (Joseph) — In progress
 
 The five scripts have been committed but not yet run, with a link to each. The results and cleaned files follow the timeline dates. A first look at the raw crash files already shows something for the assessment to measure: `weather_condition`, `roadway_surface_cond`, and `lighting_condition` contain the value `UNKNOWN`, which will count against completeness even though the cells are not empty.
 
-### Task 7: Integration script (Jason) — Not started
+### Task 7: Integration script (Jason) — In Progress
 
-This depends on Tasks 4–6.
+[Integrate.sql](scripts/integrate.sql) and [integrate.py](scripts/integrate.py) have both been committed. They have not been run yet since they need the cleaned data from task 6.
 
 ### Tasks 10–14: Analysis, workflow, metadata, README, final release — Not started
 
@@ -57,10 +55,10 @@ These were always scheduled after this milestone. The acquisition scripts were w
 | 1 | Repository setup | Tim | Oct 26 | Done | Nov 19 |
 | 2 | Acquisition scripts | Tim | Oct 30 | Done | Nov 19 |
 | 3 | Legal / ethical check | Saif | Oct 30 | Not started | Nov 23 |
-| 4 | Storage model (`schema.sql`, DuckDB load, ER diagram) | Jason | Nov 3 | Not started | Nov 24 |
+| 4 | Storage model (`schema.sql`, DuckDB load, ER diagram) | Jason | Nov 3 | In Progress | Nov 24 |
 | 5 | Pre-integration quality assessment | Joseph | Nov 7 | In progress | Nov 27 |
 | 6 | Cleaning scripts | Joseph | Nov 11 | In progress | Dec 1 |
-| 7 | Integration script | Jason | Nov 14 | Not started | Dec 3 |
+| 7 | Integration script | Jason | Nov 14 | In Progress | Dec 3 |
 | 8 | Post-integration quality assessment | Joseph | Nov 17 | In progress | Dec 5 |
 | 9 | Milestone 3: status report | All | TBD | Done | Nov 19 |
 | 10 | Analysis and visualization | Saif | Nov 25 | Not started | Dec 7 |
