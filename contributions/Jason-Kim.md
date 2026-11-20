@@ -5,7 +5,6 @@ Role: Storage and Integration
 - Loaded three cleaned CSV datasets into a DuckDB database.
 - Summarized crashes by day and joined them with daily weather and ridership data.
 - Exported the integrated daily dataset to CSV and checked its row count and date range.
-- What you did for the project plan (Milestone 2).
 - Committed files [schema.sql](scripts/schema.sql), [load_db.py](scripts/load_db.py), [integrate.sql](scripts/inegrate.sql), and [integrate.py](scripts/integrate.py).
  
 Next for me: Make ER Diagram (Task 4, Nov 24), Run the load and inegrate scripts after Joseph pushes the cleaned files (Dec 3), Submit final ReadMe (Task 13, Dec 9)
